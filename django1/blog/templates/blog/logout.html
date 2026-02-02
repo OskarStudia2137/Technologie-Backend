@@ -1,0 +1,9 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="text-center bg-white p-5 shadow-sm rounded">
+    <h2 class="fw-bold">Zostałeś wylogowany</h2>
+    <p class="text-muted">Dziękujemy za wizytę na naszym blogu!</p>
+    <a href="{% url 'login' %}" class="btn btn-primary mt-3">Zaloguj się ponownie</a>
+</div>
+{% endblock %}

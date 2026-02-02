@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-4 text-center">
+            {% if user.profile.avatar %}
+                <img src="{{ user.profile.avatar.url }}" class="rounded-circle img-thumbnail" style="width: 150px; height: 150px; object-fit: cover;">
+            {% endif %}
+            <h3>{{ user.username }}</h3>
+        </div>
+        <div class="col-md-8 bg-white p-4 shadow-sm rounded">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ p_form.as_p }}
+                <button class="btn btn-success" type="submit">Zaktualizuj profil</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
