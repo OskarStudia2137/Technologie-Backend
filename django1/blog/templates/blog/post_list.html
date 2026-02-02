@@ -1,0 +1,24 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}{{ title }} - Django Blog{% endblock %}
+
+{% block content %}
+    <div class="row mb-5 text-center">
+        <div class="col-lg-8 mx-auto">
+            <h1 class="display-4 fw-bold">{{ title }}</h1>
+            <p class="lead text-muted">Znajdź najciekawsze artykuły o programowaniu i technologii.</p>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        {% for post in posts %}
+        <div class="col-md-6 col-lg-4">
+            {% include 'blog/includes/post_card.html' with post=post %}
+        </div>
+        {% empty %}
+        <div class="col-12 text-center py-5">
+            <div class="alert alert-info">Obecnie nie mamy żadnych postów do wyświetlenia.</div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

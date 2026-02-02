@@ -1,0 +1,28 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+<article class="col-lg-8 mx-auto bg-white p-5 rounded shadow-sm">
+    <header class="mb-4">
+        <h1 class="fw-bold mb-3">{{ post.title }}</h1>
+        <div class="d-flex align-items-center text-muted small border-bottom pb-3">
+            <span class="me-3">✍️ <strong>{{ post.author }}</strong></span>
+            <span class="me-3">📅 {{ post.created_at|date:"d F Y" }}</span>
+            <span>📂 
+                {% for cat in post.categories.all %}
+                    <a href="{% url 'category_posts' cat.id %}" class="text-decoration-none badge bg-secondary">{{ cat.name }}</a>
+                {% endfor %}
+            </span>
+        </div>
+    </header>
+
+    <section class="lh-lg" style="font-size: 1.1rem; color: #333;">
+        {{ post.content|linebreaks }}
+    </section>
+
+    <footer class="mt-5 pt-4 border-top">
+        <a href="{% url 'post_list' %}" class="btn btn-light">← Wróć do listy</a>
+    </footer>
+</article>
+{% endblock %}
