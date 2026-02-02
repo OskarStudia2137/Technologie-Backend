@@ -25,14 +25,12 @@ Projekt blogowy zrealizowany w ramach kursu programowania backendowego. Aplikacj
 3. Uruchomienie serwera:
    python manage.py runserver
 
----
 
 ## Nawigacja po Projekcie
 * Strona glowna: http://127.0.0.1:8000/
 * Dokumentacja API (Swagger): http://127.0.0.1:8000/api/docs/
 * Panel Administratora: http://127.0.0.1:8000/admin/
 * Profil uzytkownika: http://127.0.0.1:8000/profile/
-
----
+* Profil Rejestracja: http://127.0.0.1:8000/register/
 
 Uwaga: Pliki bazy danych (db.sqlite3) oraz folder media/ zostaly dodane do pliku .gitignore zgodnie z najlepszymi praktykami.
